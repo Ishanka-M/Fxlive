@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SK-FX Pro v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0f172a;color:#cbd5e1;font-family:Inter}
+header{display:flex;justify-content:space-between;padding:10px 20px;background:#111827}
+select,button{background:#1f2937;color:#fff;border:1px solid #374151;padding:6px}
+canvas{width:100%;height:400px;background:#0b1220}
+.panel{padding:15px;background:#111827;margin-top:5px}
+.badge{padding:4px 8px;border-radius:4px;font-size:12px;font-weight:600}
+.buy{background:#064e3b;color:#34d399}
+.sell{background:#4c0519;color:#f87171}
+.wait{background:#374151}
+</style>
+</head>
+<body>
+
+<header>
+<div>SK-FX Pro v2</div>
+<div>
+<select id="pair"></select>
+<select id="tf">
+<option value="5">5M</option>
+<option value="15" selected>15M</option>
+<option value="60">1H</option>
+<option value="240">4H</option>
+<option value="D">D</option>
+</select>
+<button onclick="analyze()">Analyze</button>
+</div>
+</header>
+
+<canvas id="chart"></canvas>
+
+<div class="panel">
+<h3>Signal</h3>
+<div id="signal"></div>
+</div>
+
+<div class="panel">
+<h3>Confluence</h3>
+<div id="score"></div>
+</div>
+
+<div class="panel">
+<h3>Forecast</h3>
+<div id="forecast"></div>
+</div>
+
+<script src="js/apiManager.js"></script>
+<script src="js/structure.js"></script>
+<script src="js/confluence.js"></script>
+<script src="js/engine.js"></script>
+</body>
+</html>
